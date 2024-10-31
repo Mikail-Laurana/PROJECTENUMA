@@ -150,7 +150,7 @@
   "configurations": {
     "production": {
       "cordovaBuildTarget": "app:ionic-cordova-build:production",
-      "devServerTarget": "app:serve:production"
+      "devSerQverTarget": "app:serve:production"
     }
   }
 }

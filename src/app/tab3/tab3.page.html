@@ -1,17 +1,26 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      To-Do List
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <!-- Input untuk menambah To-Do -->
+  <ion-item>
+    <ion-input placeholder="Tambah to-do baru" [(ngModel)]="newTodo"></ion-input>
+    <ion-button expand="full" (click)="addTodo()">Tambah</ion-button>
+  </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <!-- List To-Do -->
+  <ion-list>
+    <ion-item *ngFor="let todo of todos; let i = index">
+      <ion-label [class.completed]="todo.completed">{{ todo.text }}</ion-label>
+      <ion-checkbox slot="start" [(ngModel)]="todo.completed"></ion-checkbox>
+      <ion-button color="danger" (click)="deleteTodo(i)" fill="clear">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>
