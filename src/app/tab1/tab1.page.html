@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
+    <ion-title>Pelatihan Enuma</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="profile">Profile</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="bg">
+      <div class="profile-pic" (click)="uploadImage()">
+        <img [src]="photoURL" alt="Profile picture"/>
+        <input type="file" id="fileInput" (change)="onFileSelected($event)" hidden />
+      </div>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+      <div class="profile-info">
+        <p><strong>Nama: </strong> Ataya Fikri</p>
+        <p><strong>Sekolah: </strong> SMK Negeri 2 Surakarta</p>
+        <p><strong>NISN: </strong> 1234567890</p>
+        <p><strong>Umur: </strong> 16 tahun</p>
+        <p><strong>Alamat: </strong> Jl.Rinjani Utara No 4</p>
+        <p><strong>Tanggal: </strong> 25 Oktober 2024</p>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
